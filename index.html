@@ -97,13 +97,12 @@ strong{font-weight:700}
 
 .aral{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center;max-width:1000px;margin:0 auto}
 .aral__viz{position:relative;display:grid;place-items:center}
-.aral__svg{width:min(330px,80%);height:auto;filter:drop-shadow(0 20px 40px rgba(10,110,189,.28))}
-.aral__bed{fill:#e7ddc2;stroke:#bca874;stroke-width:1.4;stroke-dasharray:5 4}
-.aral__ghost{fill:none;stroke:#7fa8c4;stroke-width:1.1;stroke-dasharray:3 3;opacity:.55}
-.aral__grid line{stroke:#cbb986;stroke-width:.6;opacity:.45}
-.aral__compass{fill:#8a7a4d}
+.aral__svg{width:min(100%,420px);height:auto;filter:drop-shadow(0 20px 40px rgba(10,110,189,.28))}
+.aral__bed{fill:#102b40;stroke:#a4c1cb;stroke-width:1.4;stroke-dasharray:5 4}
+.aral__grid line{stroke:#52788c;stroke-width:.6;opacity:.45}
+.aral__compass{fill:#c6e0ea}
 #aralWaterGroup{transition:transform .5s cubic-bezier(.4,0,.2,1)}
-.aral__year{position:absolute;bottom:6px;right:16px;font-size:1.4rem;font-weight:800;color:var(--blue)}
+.aral__year{position:absolute;top:8%;left:10%;font-family:Georgia,serif;font-size:clamp(1.4rem,4vw,2.3rem);line-height:1;font-weight:400;color:#d8f4fa}
 .aral__panel{padding:2rem}
 .ctrl__label{display:block;font-weight:600;margin-bottom:1rem;color:var(--ink)}
 .ctrl__label span{color:var(--blue)}
@@ -397,28 +396,30 @@ strong{font-weight:700}
     <div class="aral__viz">
       <svg viewBox="0 0 300 340" class="aral__svg" aria-hidden="true">
         <defs>
-          <linearGradient id="sand" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#efe4c6"/><stop offset="1" stop-color="#dcc792"/></linearGradient>
-          <radialGradient id="awater" cx="40%" cy="30%" r="80%"><stop offset="0" stop-color="#9fd6f4"/><stop offset="45%" stop-color="#2b8fcf"/><stop offset="100%" stop-color="#0a5587"/></radialGradient>
+          <linearGradient id="sand" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#102840"/><stop offset="1" stop-color="#071725"/></linearGradient>
+          <radialGradient id="awater" cx="40%" cy="30%" r="80%"><stop offset="0" stop-color="#83e8e7"/><stop offset="45%" stop-color="#319eb2"/><stop offset="100%" stop-color="#105775"/></radialGradient>
           <filter id="aShadow" x="-25%" y="-25%" width="150%" height="150%"><feDropShadow dx="0" dy="6" stdDeviation="6" flood-color="#0a3a5e" flood-opacity="0.35"/></filter>
         </defs>
-        <rect x="6" y="6" width="288" height="328" rx="24" fill="url(#sand)" stroke="#cdb87f" stroke-width="1.5"/>
+        <rect x="6" y="6" width="288" height="328" rx="24" fill="url(#sand)" stroke="#416174" stroke-width="1.5"/>
+        <svg x="9" y="9" width="282" height="322" viewBox="9 9 282 322" style="border-radius:20px" overflow="hidden">
+          <g fill="none" stroke="#5b9eb5" stroke-width=".55" opacity=".36"><path d="M-22 123C51 102 23 34 122 -5" transform="translate(-16 -16)"/><path d="M-22 123C51 102 23 34 122 -5" transform="translate(-12 -12)"/><path d="M-22 123C51 102 23 34 122 -5" transform="translate(-8 -8)"/><path d="M-22 123C51 102 23 34 122 -5" transform="translate(-4 -4)"/><path d="M-22 123C51 102 23 34 122 -5" transform="translate(0 0)"/><path d="M-22 123C51 102 23 34 122 -5" transform="translate(4 4)"/><path d="M-22 123C51 102 23 34 122 -5" transform="translate(8 8)"/><path d="M-22 123C51 102 23 34 122 -5" transform="translate(12 12)"/><path d="M-22 123C51 102 23 34 122 -5" transform="translate(16 16)"/><path d="M182 -22C179 29 259 52 256 102S301 151 316 158" transform="translate(-16 -16)"/><path d="M182 -22C179 29 259 52 256 102S301 151 316 158" transform="translate(-12 -12)"/><path d="M182 -22C179 29 259 52 256 102S301 151 316 158" transform="translate(-8 -8)"/><path d="M182 -22C179 29 259 52 256 102S301 151 316 158" transform="translate(-4 -4)"/><path d="M182 -22C179 29 259 52 256 102S301 151 316 158" transform="translate(0 0)"/><path d="M182 -22C179 29 259 52 256 102S301 151 316 158" transform="translate(4 4)"/><path d="M182 -22C179 29 259 52 256 102S301 151 316 158" transform="translate(8 8)"/><path d="M182 -22C179 29 259 52 256 102S301 151 316 158" transform="translate(12 12)"/><path d="M182 -22C179 29 259 52 256 102S301 151 316 158" transform="translate(16 16)"/><path d="M-31 178C70 189 42 248 127 277S141 338 159 355" transform="translate(-16 -16)"/><path d="M-31 178C70 189 42 248 127 277S141 338 159 355" transform="translate(-12 -12)"/><path d="M-31 178C70 189 42 248 127 277S141 338 159 355" transform="translate(-8 -8)"/><path d="M-31 178C70 189 42 248 127 277S141 338 159 355" transform="translate(-4 -4)"/><path d="M-31 178C70 189 42 248 127 277S141 338 159 355" transform="translate(0 0)"/><path d="M-31 178C70 189 42 248 127 277S141 338 159 355" transform="translate(4 4)"/><path d="M-31 178C70 189 42 248 127 277S141 338 159 355" transform="translate(8 8)"/><path d="M-31 178C70 189 42 248 127 277S141 338 159 355" transform="translate(12 12)"/><path d="M-31 178C70 189 42 248 127 277S141 338 159 355" transform="translate(16 16)"/><path d="M205 355C197 315 259 289 269 230S302 203 332 186" transform="translate(-16 -16)"/><path d="M205 355C197 315 259 289 269 230S302 203 332 186" transform="translate(-12 -12)"/><path d="M205 355C197 315 259 289 269 230S302 203 332 186" transform="translate(-8 -8)"/><path d="M205 355C197 315 259 289 269 230S302 203 332 186" transform="translate(-4 -4)"/><path d="M205 355C197 315 259 289 269 230S302 203 332 186" transform="translate(0 0)"/><path d="M205 355C197 315 259 289 269 230S302 203 332 186" transform="translate(4 4)"/><path d="M205 355C197 315 259 289 269 230S302 203 332 186" transform="translate(8 8)"/><path d="M205 355C197 315 259 289 269 230S302 203 332 186" transform="translate(12 12)"/><path d="M205 355C197 315 259 289 269 230S302 203 332 186" transform="translate(16 16)"/></g>
+        </svg>
         <g class="aral__grid">
           <line x1="6" y1="92" x2="294" y2="92"/><line x1="6" y1="170" x2="294" y2="170"/><line x1="6" y1="248" x2="294" y2="248"/>
           <line x1="100" y1="6" x2="100" y2="334"/><line x1="196" y1="6" x2="196" y2="334"/>
         </g>
         <path class="aral__bed" d="M150 42 C195 40 232 70 226 118 C222 150 240 168 232 200 C226 232 206 250 196 252 C190 266 176 280 168 296 C162 300 156 296 158 282 C160 262 150 256 138 250 C108 238 92 214 96 188 C99 162 84 150 88 122 C92 86 110 44 150 42 Z"/>
-        <path class="aral__ghost" style="transform-origin:150px 60px;transform:scale(0.74)" d="M150 42 C195 40 232 70 226 118 C222 150 240 168 232 200 C226 232 206 250 196 252 C190 266 176 280 168 296 C162 300 156 296 158 282 C160 262 150 256 138 250 C108 238 92 214 96 188 C99 162 84 150 88 122 C92 86 110 44 150 42 Z"/>
-        <path class="aral__ghost" style="transform-origin:150px 60px;transform:scale(0.5)" d="M150 42 C195 40 232 70 226 118 C222 150 240 168 232 200 C226 232 206 250 196 252 C190 266 176 280 168 296 C162 300 156 296 158 282 C160 262 150 256 138 250 C108 238 92 214 96 188 C99 162 84 150 88 122 C92 86 110 44 150 42 Z"/>
         <g id="aralWaterGroup" style="transform-origin:150px 60px">
           <path id="aralWater" fill="url(#awater)" filter="url(#aShadow)" stroke="#cdeafb" stroke-width="1.3" d="M150 42 C195 40 232 70 226 118 C222 150 240 168 232 200 C226 232 206 250 196 252 C190 266 176 280 168 296 C162 300 156 296 158 282 C160 262 150 256 138 250 C108 238 92 214 96 188 C99 162 84 150 88 122 C92 86 110 44 150 42 Z"/>
-          <ellipse cx="122" cy="120" rx="40" ry="22" fill="#ffffff" opacity="0.16" transform="rotate(-20 122 120)"/>
+
         </g>
+        <text x="22" y="315" fill="#acc8d6" font-size="8" letter-spacing="2">ARAL SEA · SCHEMATIC</text>
         <g class="aral__compass"><path d="M270 30 l5 14 -5 -4 -5 4 Z"/><text x="270" y="58" text-anchor="middle" font-size="11" font-weight="700">N</text></g>
       </svg>
       <div class="aral__year" id="aralYear">1960</div>
     </div>
     <div class="aral__panel card">
-      <label class="ctrl__label">Year: <span id="yearOut">1960</span></label>
+      <label class="ctrl__label" for="yearSlider">Year: <span id="yearOut">1960</span></label>
       <input type="range" min="1960" max="2020" value="1960" step="5" class="slider" id="yearSlider" />
       <div class="aral__readout">
         <div><span class="aral__big" id="waterPct">100%</span><span class="aral__cap">water remaining</span></div>
