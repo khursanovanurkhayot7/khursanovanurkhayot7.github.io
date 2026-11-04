@@ -221,6 +221,99 @@ strong{font-weight:700}
 @media (max-width:900px){.hero{grid-template-columns:1fr;gap:2.5rem;padding-top:7rem}.hero__art{max-width:420px}}
 @media (max-width:760px){.nav__links,.nav__cta{display:none}.nav__burger{display:block}.nav__links.open{display:flex;flex-direction:column;position:absolute;top:100%;right:6vw;background:#fff;padding:1.2rem 1.6rem;border-radius:16px;border:1px solid var(--border);box-shadow:var(--shadow);gap:1rem}.aral,.cards,.calc,.sim__grid{grid-template-columns:1fr}.calc__result{position:static}.footer__credit{text-align:left}}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
+
+/* WaterLens visual refinements */
+:root {
+  --ink: #09283d;
+  --muted: #4d6576;
+  --blue: #086594;
+  --blue-dark: #064d72;
+  --bg-soft: #eef7fa;
+  --border: #d6e5ec;
+}
+.hero {
+  min-height: 0;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+  gap: clamp(2.5rem, 6vw, 7rem);
+  padding: clamp(7rem, 12vw, 10rem) max(6vw, calc((100vw - 1320px) / 2)) 5rem;
+  background: radial-gradient(ellipse at 85% 35%, #c8e9ef, transparent 62%), #f3fafc;
+}
+.hero__title {font-size: clamp(2.75rem, 6vw, 6rem); letter-spacing: -.063em; line-height: .98;}
+.hero__sub {max-width: 48ch;}
+.hero__photo {aspect-ratio: 5 / 4; border: 1px solid #b8dae5; border-radius: 2rem;}
+.hero__chip {left: 1rem; bottom: 1rem;}
+.hero__stats {gap: 1rem 1.5rem; border-top: 1px solid var(--border); padding-top: 1.25rem;}
+.eyebrow {display: inline-block; background: #e5f2f8; border-radius: 999px; padding: .32rem .8rem;}
+#calculator {background: #eef7fa;}
+.calc {gap: clamp(1rem, 3vw, 2.5rem);}
+.calc__inputs, .calc__result {min-width: 0;}
+.calc__result {background: white; border: 1px solid var(--border); border-radius: var(--radius); padding: clamp(1rem, 3vw, 2rem);}
+:focus-visible {outline: 3px solid #087b9e; outline-offset: 4px;}
+.welcome__card {max-height: 90vh; overflow: auto;}
+@media (max-width: 900px) {
+  .hero {grid-template-columns: 1fr; padding-top: 7rem; padding-bottom: 3rem;}
+  .hero__art {max-width: 560px; width: 100%;}
+}
+@media (max-width: 760px) {
+  .section {padding-block: 3.75rem;}
+  .section__head {margin-bottom: 2rem;}
+  .calc__inputs {padding: 1.25rem;}
+  .field__row {flex-wrap: wrap;}
+}
+@media (prefers-reduced-motion: reduce) {
+  html {scroll-behavior: auto;}
+}
+
+/* Dark theme */
+:root {
+  color-scheme: dark;
+  --bg: #07121d;
+  --bg-soft: #0b1a27;
+  --surface: #102333;
+  --ink: #ecf7fb;
+  --text: #c2d6df;
+  --muted: #9eb9c8;
+  --blue: #71e0e2;
+  --blue-dark: #9bf4f0;
+  --blue-soft: #122d3d;
+  --teal: #65dfc7;
+  --amber: #f1c680;
+  --border: #2b4656;
+  --shadow: 0 24px 56px -24px #000b;
+  --shadow-sm: 0 12px 32px -18px #0009;
+}
+.hero {
+  background: radial-gradient(ellipse at 82% 30%, #113c4b, transparent 58%), var(--bg);
+}
+.hero__photo {border-color: var(--border); background: #0b2a40;}
+.hero__photo .ocean {filter: brightness(.77) saturate(.84);}
+.nav.scrolled {background: #07121df2;}
+.nav__links.open, .nav__help, .tag, .hero__chip, .welcome__card,
+.btn--outline, .card, .calc__result, .seg button, .footer {background: var(--surface);}
+.trust, #calculator {background: var(--bg-soft);}
+.eyebrow, .gauge, .split__bar {background: var(--blue-soft);}
+.gauge__face {background: #0a1d2ef5;}
+.gauge__water {background: linear-gradient(#1786a1, #103e66);}
+.slider {background: #355367;}
+.slider::-webkit-slider-thumb {background: var(--surface);}
+.slider::-moz-range-thumb {background: var(--surface);}
+.welcome__points > div, .split__src, .equiv__chip, .tip, .sim__stat {
+  border-color: var(--border);
+}
+.bigsrc {background: #302719; color: #f1d59e; border-color: #665131;}
+.bench__you b {color: #07121d;}
+.bigsrc strong {color: #ffe7bc;}
+.bench__leg {color: var(--teal);}
+.bench__target {background: #07121d;}
+.btn--primary, .btn--white, .seg button.on {
+  background: var(--blue);
+  color: #08252e;
+  box-shadow: 0 12px 28px -17px #71e0e2;
+}
+.btn--primary:hover, .btn--white:hover {background: var(--blue-dark);}
+.cta-band {background: linear-gradient(125deg, #102a40, #10434b); color: var(--text);}
+.cta-band h2 {color: var(--ink);}
+:focus-visible {outline-color: var(--blue);}
 </style>
 </head>
 <body>
@@ -246,18 +339,18 @@ strong{font-weight:700}
     <a href="#problem">The Problem</a><a href="#solution">Solution</a><a href="#calculator">Calculator</a><a href="#impact">Impact</a>
   </nav>
   <button class="nav__help" id="navHelp" aria-label="How it works" title="How it works">?</button>
-  <a href="#calculator" class="btn btn--primary nav__cta">Try it free</a>
+  <a href="#calculator" class="btn btn--primary nav__cta">Calculator</a>
   <button class="nav__burger" id="burger" aria-label="Menu">☰</button>
 </header>
 
 <section class="hero" id="hero">
   <div class="hero__text">
-    <span class="tag reveal">✨ Welcome to WaterLens · UN SDG 6</span>
+    <span class="tag reveal">Water footprint explorer · UN SDG 6</span>
     <h1 class="hero__title reveal">See the water<br /><span class="accent">you don't see.</span></h1>
     <p class="hero__sub reveal"><strong>WaterLens</strong> reveals the hidden water behind your daily life — your food, your shower, your habits — and turns small choices into a global difference.</p>
     <div class="hero__actions reveal">
-      <a href="#calculator" class="btn btn--primary btn--lg">Explore your footprint</a>
-      <a href="#problem" class="btn btn--outline btn--lg">See the crisis</a>
+      <a href="#calculator" class="btn btn--primary btn--lg">Calculate your footprint</a>
+      <a href="#problem" class="btn btn--outline btn--lg">Explore the Aral Sea</a>
     </div>
     <div class="hero__stats reveal">
       <div class="stat"><span class="stat__num" data-count="2200000000">0</span><span class="stat__label">people lack safe water</span></div>
@@ -365,10 +458,10 @@ strong{font-weight:700}
           <button type="button" data-type="high">Power</button>
         </div>
       </div>
-      <div class="field"><div class="field__row"><label>Shower length</label><output id="showerOut">8 min</output></div><input type="range" min="0" max="25" value="8" class="slider" id="shower" /><small class="field__hint" id="showerRange"></small></div>
-      <div class="field"><div class="field__row"><label>Baths per week</label><output id="bathOut">1</output></div><input type="range" min="0" max="14" value="1" class="slider" id="bath" /></div>
-      <div class="field"><div class="field__row"><label>Laundry loads per week</label><output id="laundryOut">4</output></div><input type="range" min="0" max="21" value="4" class="slider" id="laundry" /></div>
-      <div class="field"><div class="field__row"><label>Meat-based meals per day</label><output id="meatOut">2</output></div><input type="range" min="0" max="5" value="2" class="slider" id="meat" /></div>
+      <div class="field"><div class="field__row"><label for="shower">Shower length</label><output id="showerOut">8 min</output></div><input type="range" min="0" max="25" value="8" class="slider" id="shower" /><small class="field__hint" id="showerRange"></small></div>
+      <div class="field"><div class="field__row"><label for="bath">Baths per week</label><output id="bathOut">1</output></div><input type="range" min="0" max="14" value="1" class="slider" id="bath" /></div>
+      <div class="field"><div class="field__row"><label for="laundry">Laundry loads per week</label><output id="laundryOut">4</output></div><input type="range" min="0" max="21" value="4" class="slider" id="laundry" /></div>
+      <div class="field"><div class="field__row"><label for="meat">Meat-based meals per day</label><output id="meatOut">2</output></div><input type="range" min="0" max="5" value="2" class="slider" id="meat" /></div>
     </div>
     <div class="calc__result">
       <div class="gauge" id="gauge">
@@ -457,11 +550,18 @@ $("#burger").addEventListener("click",()=>$("#navLinks").classList.toggle("open"
 $$(".nav__links a").forEach((a)=>a.addEventListener("click",()=>$("#navLinks").classList.remove("open")));
 
 const welcome=$("#welcome");
-function hideWelcome(){welcome.hidden=true;try{localStorage.setItem("wl_seen","1");}catch(e){}}
+function hideWelcome(){
+  welcome.hidden = true;
+  $("#navHelp").focus();
+}
 $("#welcomeClose").addEventListener("click",hideWelcome);
 welcome.addEventListener("click",(e)=>{if(e.target===welcome)hideWelcome();});
-$("#navHelp").addEventListener("click",()=>{welcome.hidden=false;});
-try{if(!localStorage.getItem("wl_seen"))welcome.hidden=false;}catch(e){welcome.hidden=false;}
+$("#navHelp").addEventListener("click",()=>{welcome.hidden=false;$("#welcomeClose").focus();});
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape" && !welcome.hidden) {
+    hideWelcome();
+  }
+});
 
 function countUp(el){const target=+el.dataset.count,dur=1700,start=performance.now(),isBig=target>=1000;function tick(now){const p=Math.min((now-start)/dur,1),v=target*(1-Math.pow(1-p,3));el.textContent=isBig?abbrev(v):Math.round(v);if(p<1)requestAnimationFrame(tick);}requestAnimationFrame(tick);}
 const io=new IntersectionObserver((entries)=>{entries.forEach((e,i)=>{if(e.isIntersecting){e.target.style.transitionDelay=(i%3)*0.08+"s";e.target.classList.add("in");io.unobserve(e.target);}});},{threshold:0.14});
